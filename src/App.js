@@ -17,18 +17,16 @@ function App() {
     console.log("result" + result);
 
     function calculateInput(k, z, previous) {
-        let res = previous * (1+ z/100);
+        let res = previous * (1 + z/100);
         return res;
     }
 
     function workWithInput(){
-
             let res = {};
             for(let i = 0; i <= laufzeit;i++) {
-            res[i] = calculateInput(kapital, zinssatz, i !== 0 ? result[i-1] : kapital);
+            res[i] = calculateInput(kapital, zinssatz, i !== 0 ? res[i-1] : kapital);
             }
             setResult(res);
-
     }
   return (
     <div className={'center'}>
